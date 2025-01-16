@@ -19,7 +19,11 @@
   {
     $sql = "SELECT * FROM todo";
     $result = executeQuery($conn, $sql);
-    return $result;
+    $rows = array();
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+    return $rows;
   }
 
   /*

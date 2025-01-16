@@ -26,14 +26,7 @@
       function removeTodo(li) {
         li.remove();
       }
-
-      // Evento per l'invio del form
-      /*$('#todo-form').submit(function(e) {
-        e.preventDefault();
-        const todo = $('#todo-input').val();
-        addTodo(todo);
-        $('#todo-input').val('');
-      });*/ 
+      
       // Evento per l'invio del form
         $('#todo-form').submit(function(e) {
             e.preventDefault();
@@ -83,6 +76,22 @@
             }
             });
         });
+
+        $('#delete-all').click(function() {
+          var response = confirm("Sei sicuro di voler eliminare l'intera lista todo?");
+          if(response)
+          {
+            $.ajax({
+              type: "POST",
+              url: "delete_all_todo.php",
+              data: {},
+              success: function(data) {
+                  location.reload();
+              }
+            });
+          }
+        });
+
     });
   </script>
 </body>
