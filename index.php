@@ -1,4 +1,7 @@
-<?php require 'template/header.php'; ?>
+<?php require 'template/header.php'; 
+
+echo 'ciao';
+?>
   <div class="container mt-5">
     <h1>Lista attività da svolgere</h1>
     <form id="todo-form">
